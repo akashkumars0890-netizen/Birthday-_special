@@ -4,10 +4,1099 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Happy Birthday Uzhilla 💖</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+overflow-x:hidden;
+background:linear-gradient(135deg,#120018,#3b003b,#6a0572,#ff1493);
+background-size:400% 400%;
+animation:bgMove 12s infinite alternate;
+min-height:100vh;
+}
+
+@keyframes bgMove{
+0%{background-position:left;}
+100%{background-position:right;}
+}
+
+.page{
+display:none;
+width:100%;
+min-height:100vh;
+padding:20px;
+text-align:center;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+position:relative;
+overflow:hidden;
+}
+
+.active{
+display:flex;
+}
+
+h1{
+font-size:32px;
+color:#fff;
+margin-bottom:20px;
+text-shadow:0 0 15px rgba(255,255,255,0.4);
+}
+
+p{
+color:#fff5fb;
+font-size:18px;
+line-height:1.8;
+max-width:850px;
+}
+
+button{
+padding:14px 28px;
+border:none;
+border-radius:40px;
+background:linear-gradient(to right,#ffffff,#ffd6ec);
+color:#b3005e;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+margin-top:25px;
+transition:0.3s;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+button:hover{
+transform:scale(1.08);
+}
+
+input{
+padding:15px;
+width:280px;
+border:none;
+border-radius:30px;
+outline:none;
+font-size:18px;
+text-align:center;
+color:#ff1493;
+}
+
+.front-title{
+font-size:42px;
+font-weight:bold;
+line-height:1.4;
+background:linear-gradient(to right,#fff,#ffe066,#fff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.sparkle{
+position:absolute;
+font-size:25px;
+animation:sparkleMove linear infinite;
+pointer-events:none;
+}
+
+@keyframes sparkleMove{
+0%{
+transform:translateY(100vh);
+opacity:0;
+}
+50%{
+opacity:1;
+}
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+}
+
+.heart{
+position:absolute;
+bottom:-50px;
+font-size:24px;
+animation:heartMove 6s linear forwards;
+pointer-events:none;
+}
+
+@keyframes heartMove{
+0%{
+transform:translateY(0) scale(0);
+opacity:1;
+}
+100%{
+transform:translateY(-120vh) scale(1.5);
+opacity:0;
+}
+}
+
+.game{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+margin-top:30px;
+width:100%;
+max-width:380px;
+}
+
+.card{
+height:150px;
+background:rgba(255,255,255,0.95);
+border-radius:20px;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:12px;
+color:#b3005e;
+font-weight:bold;
+cursor:pointer;
+transition:0.4s;
+font-size:15px;
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+.card:hover{
+transform:scale(1.05);
+}
+
+.gift{
+width:160px;
+height:160px;
+background:linear-gradient(to bottom,#ff1493,#ff69b4);
+border-radius:20px;
+position:relative;
+margin-top:25px;
+cursor:pointer;
+animation:bounce 2s infinite;
+}
+
+.gift:before{
+content:'';
+position:absolute;
+width:24px;
+height:160px;
+background:white;
+left:50%;
+transform:translateX(-50%);
+}
+
+.gift:after{
+content:'';
+position:absolute;
+width:160px;
+height:24px;
+background:white;
+top:50%;
+transform:translateY(-50%);
+}
+
+@keyframes bounce{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-12px);}
+}
+
+.letter{
+display:none;
+background:rgba(255,255,255,0.96);
+padding:22px;
+border-radius:25px;
+max-width:850px;
+margin-top:30px;
+color:#b3005e;
+line-height:2;
+font-size:16px;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+.balloon{
+position:absolute;
+bottom:-150px;
+width:85px;
+height:105px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:10px;
+font-size:11px;
+font-weight:bold;
+color:white;
+cursor:pointer;
+animation:floatUp linear forwards;
+box-shadow:0 0 20px rgba(255,255,255,0.3),
+0 10px 25px rgba(0,0,0,0.3);
+}
+
+.balloon:after{
+content:'';
+position:absolute;
+bottom:-24px;
+width:2px;
+height:28px;
+background:white;
+}
+
+@keyframes floatUp{
+0%{
+transform:translateY(0);
+opacity:1;
+}
+100%{
+transform:translateY(-140vh);
+opacity:0;
+}
+}
+
+.foods{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+margin-top:30px;
+width:100%;
+max-width:380px;
+}
+
+.food{
+height:150px;
+background:rgba(255,255,255,0.95);
+border-radius:20px;
+display:flex;
+justify-content:center;
+align-items:center;
+color:#b3005e;
+font-weight:bold;
+font-size:18px;
+cursor:pointer;
+padding:10px;
+overflow:hidden;
+}
+
+.food img{
+width:100%;
+height:100%;
+object-fit:contain;
+border-radius:15px;
+}
+
+.cakeScene{
+perspective:1200px;
+margin-top:30px;
+}
+
+.cake3d{
+width:280px;
+height:300px;
+position:relative;
+transform-style:preserve-3d;
+transition:2s;
+}
+
+.rotate{
+transform:rotateY(180deg);
+}
+
+.frontCake,
+.backCake{
+position:absolute;
+width:100%;
+height:100%;
+backface-visibility:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+}
+
+.backCake{
+transform:rotateY(180deg);
+background:rgba(255,255,255,0.2);
+border-radius:25px;
+padding:18px;
+text-align:center;
+}
+
+.mainCake{
+position:relative;
+}
+
+.layer{
+width:220px;
+height:75px;
+background:#ff1493;
+border-radius:20px;
+position:relative;
+}
+
+.layer:before{
+content:'';
+position:absolute;
+width:180px;
+height:60px;
+background:#ff69b4;
+top:-50px;
+left:20px;
+border-radius:20px;
+}
+
+.layer:after{
+content:'';
+position:absolute;
+width:145px;
+height:50px;
+background:#ffd1e6;
+top:-92px;
+left:37px;
+border-radius:20px;
+}
+
+.candles{
+display:flex;
+gap:12px;
+position:absolute;
+top:-170px;
+left:50%;
+transform:translateX(-50%);
+}
+
+.candle{
+width:14px;
+height:65px;
+background:white;
+position:relative;
+border-radius:10px;
+}
+
+.flame{
+position:absolute;
+width:20px;
+height:20px;
+background:orange;
+border-radius:50%;
+top:-17px;
+left:-3px;
+animation:flicker 0.3s infinite alternate;
+}
+
+@keyframes flicker{
+from{transform:scale(1);}
+to{transform:scale(1.2);}
+}
+
+.fall{
+position:fixed;
+top:-50px;
+font-size:28px;
+animation:fall 5s linear forwards;
+pointer-events:none;
+}
+
+@keyframes fall{
+0%{
+transform:translateY(0);
+opacity:1;
+}
+100%{
+transform:translateY(120vh) rotate(360deg);
+opacity:0;
+}
+}
+
+.envelope{
+position:relative;
+width:230px;
+height:150px;
+background:#fff;
+margin-top:30px;
+cursor:pointer;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+overflow:hidden;
+}
+
+.envelope:before{
+content:'';
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#ffd6ec;
+clip-path:polygon(0 0,50% 55%,100% 0);
+}
+
+.envelope-text{
+position:absolute;
+bottom:15px;
+width:100%;
+text-align:center;
+font-weight:bold;
+color:#b3005e;
+}
+
+.hiddenMsg{
+display:none;
+background:rgba(255,255,255,0.96);
+padding:25px;
+border-radius:25px;
+margin-top:25px;
+max-width:850px;
+color:#b3005e;
+line-height:2;
+}
+
+.meter-box{
+margin-top:30px;
+width:90%;
+max-width:400px;
+}
+
+.meter{
+width:100%;
+height:35px;
+background:rgba(255,255,255,0.3);
+border-radius:30px;
+overflow:hidden;
+margin-top:20px;
+}
+
+.fill{
+height:100%;
+width:0%;
+background:linear-gradient(to right,#ff69b4,#ffe066);
+transition:1s;
+}
+
+.meterText{
+margin-top:20px;
+font-size:20px;
+color:white;
+font-weight:bold;
+}
+
+.final{
+background:rgba(255,255,255,0.12);
+padding:25px;
+border-radius:25px;
+max-width:900px;
+backdrop-filter:blur(10px);
+}
+
+.welcomegif{
+width:220px;
+max-width:85%;
+margin:20px auto;
+border-radius:20px;
+display:block;
+}
+
+@media(max-width:600px){
+
+h1{
+font-size:28px;
+}
+
+.front-title{
+font-size:34px;
+}
+
+p{
+font-size:16px;
+}
+
+}
+
+</style>
 </head>
-<body style="font-family:Arial;background:#111;color:white;text-align:center;padding:40px;">
-<h1>Happy Birthday Uzhilla 💖</h1>
-<p>Your full website code was prepared successfully.</p>
-<p>Save all your GIF and WEBP files in the same folder as this HTML file.</p>
+
+<body>
+
+<!-- PAGE 1 -->
+
+<div class="page active" id="page1">
+
+<h1 class="front-title">
+🎉 Welcome Birthday Girl 🎉
+</h1>
+
+<img src="sappy-seal.gif" class="welcomegif">
+
+<p>
+💖 🌸 ✨ 🎂 🧸
+</p>
+
+<button onclick="nextPage(2)">
+Enter 💌
+</button>
+
+</div>
+
+<!-- PAGE 2 -->
+
+<div class="page" id="page2">
+
+<h1>
+💌 Enter Your Name
+</h1>
+
+<input type="text" id="nameInput" placeholder="Write your beautiful name">
+
+<button onclick="checkName()">
+Start 💖
+</button>
+
+</div>
+
+<!-- PAGE 3 -->
+
+<div class="page" id="page3">
+
+<h1>
+💖 Happy Birthday Uzhilla 💖
+</h1>
+
+<h1 style="font-size:24px;">
+🌸 You Are Truly Special 🌸
+</h1>
+
+<p>
+Your smile makes every moment brighter and happier ✨
+</p>
+
+<button onclick="nextPage(4)">
+Play Birthday Game 🎮
+</button>
+
+</div>
+
+<!-- PAGE 4 -->
+
+<div class="page" id="page4">
+
+<h1>
+🎮 Special Birthday Game 🎮
+</h1>
+
+<p>
+Tap every card and reveal cute surprises 💖
+</p>
+
+<div class="game">
+
+<div class="card" onclick="this.innerHTML='🌸 Your smile is magical'">
+Tap Me 💖
+</div>
+
+<div class="card" onclick="this.innerHTML='🎂 Birthday Queen Forever'">
+Tap Me ✨
+</div>
+
+<div class="card" onclick="this.innerHTML='🧸 You make life beautiful'">
+Tap Me 🌈
+</div>
+
+<div class="card" onclick="this.innerHTML='🍫 Sweeter than chocolate'">
+Tap Me 🎀
+</div>
+
+</div>
+
+<button onclick="nextPage(5)">
+Next Surprise 🎁
+</button>
+
+</div>
+
+<!-- PAGE 5 -->
+
+<div class="page" id="page5">
+
+<h1>
+🎁 Special Surprise 🎁
+</h1>
+
+<p>
+Tap the magical gift box 💖
+</p>
+
+<div class="gift" onclick="openGift()"></div>
+
+<div class="letter" id="letter">
+
+<h2>
+💌 Things That Make You Precious
+</h2>
+
+<br>
+
+🌸 Your smile feels like sunshine.<br><br>
+💖 Your presence makes every moment special.<br><br>
+✨ You have the kindest and softest heart.<br><br>
+🌈 Talking with you feels comforting and peaceful.<br><br>
+🎀 Your cute nature makes everyone happy.<br><br>
+🧸 You deserve endless happiness and success.<br><br>
+🌷 You make ordinary days feel beautiful.<br><br>
+💫 Your laugh is genuinely adorable.<br><br>
+🍫 You are sweeter than chocolates.<br><br>
+🎂 You deserve the happiest birthday ever.
+
+</div>
+
+<button onclick="nextPage(6)">
+Favourite Foods 🍕
+</button>
+
+</div>
+
+<!-- PAGE 6 -->
+
+<div class="page" id="page6">
+
+<h1>
+🍽 Favourite Foods 🍽
+</h1>
+
+<div class="foods">
+
+<div class="food" onclick="this.innerHTML='<img src=&quot;eastern-masala-biriyani.gif&quot;>'">
+Box 1
+</div>
+
+<div class="food" onclick="this.innerHTML='<img src=&quot;feastables-chocolate.webp&quot;>'">
+Box 2
+</div>
+
+<div class="food" onclick="this.innerHTML='<img src=&quot;hungry-eating.webp&quot;>'">
+Box 3
+</div>
+
+<div class="food" onclick="this.innerHTML='<img src=&quot;kitkat-kitkatdd.gif&quot;>'">
+Box 4
+</div>
+
+</div>
+
+<button onclick="nextPage(7)">
+Cake Time 🎂
+</button>
+
+</div>
+
+<!-- PAGE 7 -->
+
+<div class="page" id="page7">
+
+<h1>
+🎂 Magical Birthday Cake 🎂
+</h1>
+
+<p>
+Blow the candles and see the magical surprise 💖
+</p>
+
+<img src="grand-world-gwpq.gif" class="welcomegif">
+
+<div class="cakeScene">
+
+<div class="cake3d" id="cake3d">
+
+<div class="frontCake">
+
+<div class="mainCake">
+
+<div class="candles">
+
+<div class="candle"><div class="flame"></div></div>
+<div class="candle"><div class="flame"></div></div>
+<div class="candle"><div class="flame"></div></div>
+
+</div>
+
+<div class="layer"></div>
+
+</div>
+
+</div>
+
+<div class="backCake">
+
+<h2>
+💖 Dear Uzhilla 💖
+</h2>
+
+<p>
+🌸 Stay happy forever ✨<br><br>
+🎀 Your smile is precious 💖<br><br>
+🧸 You deserve endless love 🌈<br><br>
+🍫 Keep shining always 🌷<br><br>
+🎂 Happiest Birthday Ever 💫
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<button onclick="blowCandle()">
+Blow Candle 💨
+</button>
+
+<button onclick="goToEnvelope()">
+Next Surprise 💌
+</button>
+
+</div>
+
+<!-- PAGE 8 -->
+
+<div class="page" id="page8">
+
+<h1>
+💌 Open Your Birthday Letter
+</h1>
+
+<div class="envelope" onclick="openEnvelope()">
+
+<div class="envelope-text">
+Tap To Open 💖
+</div>
+
+</div>
+
+<div class="hiddenMsg" id="hiddenMsg">
+
+🌸 Happy Birthday Uzhilla 💖<br><br>
+
+You are truly one of the sweetest and most precious people ever ✨<br><br>
+
+May your life always stay filled with happiness, peace, success and endless smiles 🌈<br><br>
+
+You deserve every beautiful thing in this world 🧸🎂🌷
+
+</div>
+
+<button onclick="nextPage(9)">
+Happy Meter 🎮
+</button>
+
+</div>
+
+<!-- PAGE 9 -->
+
+<div class="page" id="page9">
+
+<h1>
+🎮 Happiness Meter 🎮
+</h1>
+
+<p>
+Fill the happiness meter for your birthday 💖
+</p>
+
+<img src="tkthao219-bubududu.webp" class="welcomegif">
+
+<div class="meter-box">
+
+<button onclick="increaseMeter()">
+Make Uzhilla Happy 💖
+</button>
+
+<div class="meter">
+<div class="fill" id="fill"></div>
+</div>
+
+<div class="meterText" id="meterText">
+0% Happy
+</div>
+
+</div>
+
+<button onclick="nextPage(10)">
+Final Message 💌
+</button>
+
+</div>
+
+<!-- PAGE 10 -->
+
+<div class="page" id="page10">
+
+<div class="final">
+
+<h1>
+💖 A Special Birthday Message For Uzhilla 💖
+</h1>
+
+<img src="tamil-hindu.webp" class="welcomegif">
+
+<p>
+
+🌸 Happy Birthday to the most adorable and precious bestie ever 💖<br><br>
+
+✨ Your smile can brighten even the darkest day 🌈<br><br>
+
+🎀 Thank you for always being so kind, sweet and caring 🥺<br><br>
+
+🧸 You deserve endless happiness, success and magical moments 🎂<br><br>
+
+🌷 I hope every dream hidden in your heart becomes reality 💫<br><br>
+
+🍫 May your days stay sweeter than chocolates and softer than flowers 🌸<br><br>
+
+💖 Your presence makes life more beautiful and special ✨<br><br>
+
+🌈 Keep smiling because your smile is truly priceless 🎀<br><br>
+
+🎂 May this birthday become one of the happiest days of your life 🧸<br><br>
+
+💫 Stay cute, stay happy and always stay the amazing person you are 🌷<br><br>
+
+🎉 HAPPY BIRTHDAY UZHILLA 🎉
+
+</p>
+
+</div>
+
+</div>
+
+<script>
+
+function nextPage(page){
+
+document.querySelectorAll('.page').forEach(function(p){
+p.classList.remove('active');
+});
+
+document.getElementById('page'+page).classList.add('active');
+
+}
+
+function checkName(){
+
+let name=document.getElementById("nameInput").value.toLowerCase();
+
+if(name==="uzhilla"){
+
+for(let i=0;i<35;i++){
+
+let heart=document.createElement("div");
+
+heart.classList.add("heart");
+
+heart.innerHTML="💖";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.bottom=Math.random()*20+"vh";
+
+heart.style.fontSize=(20+Math.random()*25)+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(function(){
+heart.remove();
+},6000);
+
+}
+
+nextPage(3);
+
+createHearts();
+
+}else{
+
+alert("Only Birthday Girl Uzhilla Can Enter 💖");
+
+}
+
+}
+
+function createHearts(){
+
+setInterval(function(){
+
+let heart=document.createElement("div");
+
+heart.classList.add("heart");
+
+heart.innerHTML="💖";
+
+heart.style.left=Math.random()*100+"vw";
+
+document.body.appendChild(heart);
+
+setTimeout(function(){
+heart.remove();
+},6000);
+
+},300);
+
+}
+
+setInterval(function(){
+
+let sparkle=document.createElement("div");
+
+sparkle.classList.add("sparkle");
+
+let icons=["✨","💖","🌸","🎀"];
+
+sparkle.innerHTML=icons[Math.floor(Math.random()*icons.length)];
+
+sparkle.style.left=Math.random()*100+"vw";
+
+sparkle.style.animationDuration=(5+Math.random()*5)+"s";
+
+document.body.appendChild(sparkle);
+
+setTimeout(function(){
+sparkle.remove();
+},10000);
+
+},500);
+
+let balloonInterval;
+
+const balloonMessages=[
+"🌸 Your smile is beautiful",
+"💖 You are truly precious",
+"✨ You deserve happiness",
+"🎀 Sweetest person ever",
+"🧸 Stay happy always"
+];
+
+function openGift(){
+
+document.getElementById("letter").style.display="block";
+
+createBalloons();
+
+}
+
+function createBalloons(){
+
+let i=0;
+
+balloonInterval=setInterval(function(){
+
+if(i>=balloonMessages.length){
+
+clearInterval(balloonInterval);
+return;
+
+}
+
+let balloon=document.createElement("div");
+
+balloon.classList.add("balloon");
+
+balloon.style.left=Math.random()*90+"vw";
+
+balloon.style.background=`hsl(${Math.random()*360},70%,60%)`;
+
+balloon.style.animationDuration=(15+Math.random()*4)+"s";
+
+balloon.innerHTML="🎈";
+
+balloon.dataset.msg=balloonMessages[i];
+
+balloon.onclick=function(){
+this.innerHTML=this.dataset.msg;
+};
+
+document.body.appendChild(balloon);
+
+setTimeout(function(){
+balloon.remove();
+},18000);
+
+i++;
+
+},1800);
+
+}
+
+function goToEnvelope(){
+
+document.querySelectorAll('.balloon').forEach(function(b){
+b.remove();
+});
+
+clearInterval(balloonInterval);
+
+nextPage(8);
+
+}
+
+function blowCandle(){
+
+document.querySelectorAll('.flame').forEach(function(f){
+f.style.display='none';
+});
+
+document.getElementById("cake3d").classList.add("rotate");
+
+fallItems();
+
+}
+
+function fallItems(){
+
+for(let i=0;i<60;i++){
+
+let item=document.createElement("div");
+
+item.classList.add("fall");
+
+item.style.left=Math.random()*100+"vw";
+
+item.style.animationDuration=(4+Math.random()*3)+"s";
+
+let icons=["🌸","🍫","💖","✨"];
+
+item.innerHTML=icons[Math.floor(Math.random()*icons.length)];
+
+document.body.appendChild(item);
+
+setTimeout(function(){
+item.remove();
+},7000);
+
+}
+
+}
+
+function openEnvelope(){
+
+document.getElementById("hiddenMsg").style.display="block";
+
+}
+
+let happiness=0;
+
+function increaseMeter(){
+
+if(happiness<100){
+
+happiness+=20;
+
+document.getElementById("fill").style.width=happiness+"%";
+
+document.getElementById("meterText").innerHTML=happiness+"% Happy 💖";
+
+}
+
+}
+
+</script>
+
 </body>
 </html>
